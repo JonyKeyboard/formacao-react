@@ -1,2 +1,2 @@
 # formacao-react
-Formação React (Alura)
+React para Iniciantes
