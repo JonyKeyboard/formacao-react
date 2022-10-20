@@ -1,3 +1,3 @@
-# formacao-react
+# js-course
 
-basic-JS - é o curso básico de JavaScript do Canal Hora de Codar
+js-course é um curso de Javascript, jQuery, Ajax e Json da plataforma de ensino Udemy
