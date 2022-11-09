@@ -1,65 +1,39 @@
-// Aula 3 - variáveis
+// Aula 10 - Trabalhando com o DOM
 
-// var latitude = 40.87663;
-// var longitude = -8.08373;
+// document.getElementById("caixa_amarela").innerHTML = '<h1>' + 'Caixa amarela' + '</h1>';
 
-// console.log(latitude);
-// console.log(longitude);
+// var caixa_azul = document.getElementById("caixa_azul").innerHTML;
 
-// Aula 4 - String
+// document.getElementById("caixa_azul").innerHTML = '<h1>'+ caixa_azul +'</h1>';
 
-// var nome = "João";  // podem ser usadas aspas duplas
-// var sobrenome = 'Gomes';  // ou aspas simples
-// var cpf = '111.111.111-11';  
-// var telefone = "998887655";
-// var ddd = '21';
-// var email = 'joao@gmail.com';
-// var biografia = "João começou a sua carreira como desenvolvedor web em 2010 e já participou de importantes projetos, como...";
+// Aula 11 - Funções
 
-// console.log('Nome completo: ' + nome + ' ' + sobrenome);
-// console.log(ddd + ' ' + telefone);
-// console.log('Primeira letra do nome: ' + nome[0]);
+// function soma_numeros() {
+//     var x = 5;
+//     var y = 2;
+//     var soma = x + y;
+//     console.log(soma);
+// }
 
-// console.log('Numero de caracteres telefone: ' + telefone.length);
+// soma_numeros();
 
-// Aula 5 - Numeros
+// function soma_args(num1, num2) {
+//     var soma = num1 + num2;
+//     return soma;
+// }
 
-// var num1 = 20;
-// var num2 = 3;
+// console.log(soma_args(2,3));
 
-// var soma = num1 + num2;
-// var subtracao = num1 - num2;
-// var divisao = num1 / num2;
-// var multiplicacao = num1 * num2;
+function valor_imc(peso,altura) {
+    var imc = peso / (altura * altura);
+    return imc;
+}
 
-// var media = (num1 + num2) / 2;
+var meu_peso = parseFloat(document.getElementById("peso").innerHTML);
+var minha_altura = parseFloat(document.getElementById("altura").innerHTML);
 
-// console.log('A média é: ' + media);
+var meu_imc = valor_imc(meu_peso,minha_altura);
 
-// //converter o tipo de uma variável
-
-// console.log(Math.pow(2,4));
-
-// var ddd = 21;
-// var telefone = 998887655;
-
-// /* Se quisermos montar o telefone completo usando concatenação, podemos ter problemas já que as variáveis são do tipo número. 
-// Neste caso devemos convertê-las antes de montar o telefone. 
-// Para isso, usamos o método toString, que recebe entre parênteses a valor ou variável que queremos converter.*/
-
-// var ddd_string = ddd.toString();
-// var tel_string = telefone.toString();
-
-// var telefone_completo = ddd_string + tel_string;
-
-// console.log(telefone_completo); // retorna '21998887655'
-
-// Aula 6 - Tipos de dados Booleanos
-
-// var teste = 65 < 60;
-
-// console.log(teste);
-
-// Aula 7 - Tipos de dados
-
-
+document.getElementById("peso").innerHTML = meu_peso;
+document.getElementById("altura").innerHTML = minha_altura;
+document.getElementById("imc").innerHTML = meu_imc.toFixed(2);
