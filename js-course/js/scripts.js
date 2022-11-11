@@ -1,117 +1,37 @@
-// Aula 10 - Trabalhando com o DOM
+// Aula 16 - Eventos
 
-// document.getElementById("caixa_amarela").innerHTML = '<h1>' + 'Caixa amarela' + '</h1>';
-
-// var caixa_azul = document.getElementById("caixa_azul").innerHTML;
-
-// document.getElementById("caixa_azul").innerHTML = '<h1>'+ caixa_azul +'</h1>';
-
-// Aula 11 - Funções
-
-// function soma_numeros() {
-//     var x = 5;
-//     var y = 2;
-//     var soma = x + y;
-//     console.log(soma);
+// document.getElementById("click-me").onclick = function () {
+//     alert("Você clicou no botão");
 // }
-
-// soma_numeros();
-
-// function soma_args(num1, num2) {
-//     var soma = num1 + num2;
-//     return soma;
+// document.getElementById("hover-me").onmouseover = function () {
+//     alert("Você passou o cursor no botão");
 // }
-
-// console.log(soma_args(2,3));
-
-// function valor_imc(peso,altura) {
-//     var imc = peso / (altura * altura);
-//     return imc;
-// }
-
-// var meu_peso = parseFloat(document.getElementById("peso").innerHTML);
-// var minha_altura = parseFloat(document.getElementById("altura").innerHTML);
-
-// var meu_imc = valor_imc(meu_peso,minha_altura);
-
-// document.getElementById("peso").innerHTML = meu_peso;
-// document.getElementById("altura").innerHTML = minha_altura;
-// document.getElementById("imc").innerHTML = meu_imc.toFixed(2);
-
-//Aula 12 - Arrays
-
-// var alunos = ["João", "Maria", "José"];
-// var num_primos = [2, 3, 5, 7, 11, 13];
-
-// console.log(alunos.length);
-// console.log(num_primos[2]);
-// console.log(num_primos[10]);
-
-// var grupos = [ 
-//     [ "João" , "Maria" ],
-//     [ "Pedro" , "Joana", "André", "Júlio" ],
-//     [ "Carolina" , "Helena", "Marcelo" ]
-// ];
-
-// console.log(grupos.length);
-// console.log(grupos[1][1]);
-
-//Aula 13 - Objetos
-
-// var funcionario = {
-//     'nome': 'Pedro Souza Gomes',
-//     'ano_nasc': 1972,
-//     'cpf': '111.111.111.11',
-//     'cargo': 'Analista de Sistemas'
+// document.getElementById("leave-me").onmouseout = function() {
+//     alert('Você passou o cursor por cima do botão e depois saiu');
+// };
+// Aula 17 - Manipulação CSS
+// document.onkeydown = function() {
+//     alert('Você apertou a tecla: ' + event.keyCode);
 // };
 
-// console.log(funcionario['nome']);
-// console.log(funcionario.ano_nasc);
+// function button_clicked() {
+//     alert("Você clicou no botão");
+// }
 
-// funcionario.cargo = "Gerente de TI";
-// funcionario.cnh = "135123215335";
+// botao = document.getElementById("botao_cor");
+// botao.onclick = function() {
+//     botao.style["background-color"] = "purple";
+//     botao.style.transform = "translateX(100px)";
+// }
 
-// console.log(funcionario);
+// Aula 18 - Outros métodos getElement
 
-// var cursos = [
-//     {
-//         'titulo': 'Aprenda programação em Python 3 com facilidade do zero',
-//         'avaliacoes': 680,
-//         'alunos': 2300,
-//         'categorias': ['programacao', 'tecnologia']
-//     },
+// var exemplo = document.getElementsByClassName("exemplo");
 
-//     {
-//         'titulo': 'Aprenda PHP e faça sites dinâmicos',
-//         'avaliacoes': 180,
-//         'alunos': 350,
-//         'categorias': ['desenvolvimento web', 'programacao']
-//     },
+// exemplo[0].innerHTML = "teste1";
 
-//     {
-//         'titulo': 'Excel do Zero ao Avançado',
-//         'avaliacoes': 420,
-//         'alunos': 1800,
-//         'categorias': ['produtividade', 'gestão']
-//     }
-    
-// ];
+// console.log(exemplo);
 
-// console.log(cursos[1].categorias[0]);
+var paragrafos = document.getElementsByTagName("p");
 
-var aluno = {
-    'nome': 'Maria',
-    'sobrenome': 'Pereira',
-    'ano_nasc' : 1993,
-    'nome_completo': function() {
-        var nomeCompleto = this.nome + ' ' + this.sobrenome;
-        return nomeCompleto;
-    },
-    'idade' : function (anoAtual) {
-        var sua_idade =  anoAtual - this.ano_nasc;
-        return sua_idade;
-    }
-};
-
-console.log(aluno.nome_completo());
-console.log(aluno.idade(2022));
+console.log(paragrafos);
