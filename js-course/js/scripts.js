@@ -32,6 +32,6 @@
 
 // console.log(exemplo);
 
-var paragrafos = document.getElementsByTagName("p");
+// var paragrafos = document.getElementsByTagName("p");
 
-console.log(paragrafos);
+// console.log(paragrafos);
