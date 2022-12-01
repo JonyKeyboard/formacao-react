@@ -29,24 +29,21 @@ while(ano_inicio <= ano_fim){
 //CORRIGIR--------------------------------------------
 document.getElementById("calcular").onclick = function() {
     
-    var nota1 = document.getElementById("nota1").value;
-    var nota2 = document.getElementById("nota2").value;
-    var n_faltas = document.getElementById("n_faltas").value;
+    var nota1 = parseFloat(document.getElementById("nota1").value);
+    var nota2 = parseFloat(document.getElementById("nota2").value);
+    var n_faltas = parseFloat(document.getElementById("n_faltas").value);
 
     var media = (nota1 + nota2) / 2;
     var min_presenca = 20 * 0.7;
 
-    console.log(media);
-    console.log(min_presenca);
-
     if(media < 6.5 && n_faltas > min_presenca){
-        console.log('Reprovado por média e falta')
+        document.getElementById("result").innerHTML = "Reprovado por média e falta";
+    }else if(media < 6.5){
+        document.getElementById("result").innerHTML = "Reprovado por média";
+    } else if (n_faltas > min_presenca) {
+        document.getElementById("result").innerHTML = "Reprovado por falta";
+    } else {
+        document.getElementById("result").innerHTML = "Aprovado";
     }
-
-
-
-    // console.log(nota1);
-    // console.log(nota2);
-    // console.log(n_faltas);
 };
 
