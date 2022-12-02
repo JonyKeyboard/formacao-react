@@ -25,8 +25,6 @@ while(ano_inicio <= ano_fim){
 
 // --------------------------------------------------------------------------------
 
-
-//CORRIGIR--------------------------------------------
 document.getElementById("calcular").onclick = function() {
     
     var nota1 = parseFloat(document.getElementById("nota1").value);
@@ -47,3 +45,68 @@ document.getElementById("calcular").onclick = function() {
     }
 };
 
+//---------------------------------------------------------------------------------
+
+var vendas_cursos = [
+
+    {
+        'aluno': 'Emmanuel Gomes',
+        'data': '10/06/2018',
+        'valor': 34.99,
+        'reembolso': null
+        
+    },
+
+    {
+        'aluno': 'Carla Dias',
+        'data': '10/06/2018',
+        'valor': 29.99,
+        'reembolso': null
+        
+    },
+
+    {
+        'aluno': 'Rafael Marques',
+        'data': '11/06/2018',
+        'valor': 39.99,
+        'reembolso': '13/06/2018'
+        
+    },
+
+    {
+        'aluno': 'Maria Isabel Pereira',
+        'data': '11/06/2018',
+        'valor': 29.99,
+        'reembolso': null
+        
+    },
+
+    {
+        'aluno': 'Andre Luis Silva',
+        'data': '12/06/2018',
+        'valor': 34.99,
+        'reembolso': null
+        
+    }
+
+];
+
+var list_element = document.getElementById("vendas_cursos");
+var n_vendas = 0;
+var total_vendas = 0;
+
+for (var a = 0 ; a < vendas_cursos.length ; a++){
+    
+    if(!vendas_cursos[a].reembolso){
+        list_element.innerHTML += '<tr>';
+        list_element.innerHTML += '<td>' + vendas_cursos[a].aluno + '</td>' + 
+                                    '<td>' + vendas_cursos[a].data + '</td>' +
+                                    '<td>' + vendas_cursos[a].valor + '</td>';
+        list_element.innerHTML += '</tr>';
+        n_vendas += 1;
+    }
+    
+    
+}
+
+document.getElementById("total_vendas").innerHTML = n_vendas;
