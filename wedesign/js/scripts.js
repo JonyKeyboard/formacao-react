@@ -61,10 +61,41 @@ var our_services = [
   
 ];
 
+var servico_atual = 0;
+
+document.getElementById("service-previous").onclick = function(){
+
+  if (servico_atual == 0){
+    var servico_anterior = our_services.length - 1;
+  } else {
+    var servico_anterior = servico_atual - 1;
+  }
+
+  document.getElementById("service-title").innerHTML = our_services[servico_anterior].title;
+  document.getElementById("service-text").innerHTML = our_services[servico_anterior].text;
+  servico_atual = servico_anterior;
+
+}
+
+document.getElementById("service-next").onclick = function(){
+
+  if (servico_atual == our_services.length - 1){
+    var servico_seguinte = 0;
+  } else {
+    var servico_seguinte = servico_atual + 1;
+  }
+
+  document.getElementById("service-title").innerHTML = our_services[servico_seguinte].title;
+  document.getElementById("service-text").innerHTML = our_services[servico_seguinte].text;
+  servico_atual = servico_seguinte;
+
+}
 
 // Data Footer
 
-
+var ano_atual = new Date;
+ano_atual = ano_atual.getFullYear();
+document.getElementById("current_year").innerHTML = ano_atual;
 
   
    
