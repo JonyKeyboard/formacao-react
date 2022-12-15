@@ -78,11 +78,62 @@
 
 // console.log(Math.floor(anos));
 
-var envio = new Date("2018-03-20");
-envio = envio.getTime();
-var entrega = new Date("2018-04-06");
-entrega = entrega.getTime();
+// var envio = new Date("2018-03-20");
+// envio = envio.getTime();
+// var entrega = new Date("2018-04-06");
+// entrega = entrega.getTime();
 
-var dias = (entrega - envio) / 86400000;
+// var dias = (entrega - envio) / 86400000;
 
-document.getElementById("dias_entrega").innerHTML = dias;
+// document.getElementById("dias_entrega").innerHTML = dias;
+
+// aula 27 - Métodos de tempo
+
+// console.log('Mensagem 1');
+
+// window.setTimeout(function(){
+//     console.log('Mensagem 2');
+// }, 3000);
+
+// document.getElementById("mostrar-loader").onclick = function() {
+
+//     document.getElementById("spinner-loader").style.display = "initial";
+
+//     window.setTimeout(function(){
+//         document.getElementById("spinner-loader").style.display = "none";
+//     },5000);
+
+// };
+
+// var count = 0;
+
+// var inter = window.setInterval(function(){
+//     console.log(count);
+//     count++;
+//     if (count >= 10){
+//         window.clearInterval(inter);
+//     }
+// }, 1000);
+
+// Desafio Relógio
+
+window.setInterval(function (){
+
+    var hora_atual = new Date();
+
+    var horas = hora_atual.getHours();
+    var minutos = hora_atual.getMinutes();
+    var segundos = hora_atual.getSeconds();
+
+    function format_time (time) {
+        if (time >= 0 && time <= 9){
+            var formatted_time = time.toString();
+            formatted_time = "0" + formatted_time;
+        } else {
+            var formatted_time = time.toString();
+        }
+        return formatted_time;
+    }
+
+    document.getElementById("relogio").innerHTML = format_time(horas) + ":" + format_time(minutos) + ":" + format_time(segundos);
+});
