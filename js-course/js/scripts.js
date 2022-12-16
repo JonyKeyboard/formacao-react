@@ -117,23 +117,89 @@
 
 // Desafio Relógio
 
-window.setInterval(function (){
+// window.setInterval(function (){
 
-    var hora_atual = new Date();
+//     var hora_atual = new Date();
 
-    var horas = hora_atual.getHours();
-    var minutos = hora_atual.getMinutes();
-    var segundos = hora_atual.getSeconds();
+//     var horas = hora_atual.getHours();
+//     var minutos = hora_atual.getMinutes();
+//     var segundos = hora_atual.getSeconds();
 
-    function format_time (time) {
-        if (time >= 0 && time <= 9){
-            var formatted_time = time.toString();
-            formatted_time = "0" + formatted_time;
-        } else {
-            var formatted_time = time.toString();
-        }
-        return formatted_time;
+//     function format_time (time) {
+//         if (time >= 0 && time <= 9){
+//             var formatted_time = time.toString();
+//             formatted_time = "0" + formatted_time;
+//         } else {
+//             var formatted_time = time.toString();
+//         }
+//         return formatted_time;
+//     }
+
+//     document.getElementById("relogio").innerHTML = format_time(horas) + ":" + format_time(minutos) + ":" + format_time(segundos);
+// });
+
+// aula 28 - Switch
+
+// function valor_pedagio(categoria){
+
+//     switch(categoria) {
+
+//         case '1':
+//             return 11.22;
+//             break;
+//         case '2':
+//             return 22.44
+//             break;
+//         case '3':
+//             return 25.00
+//             break;
+//         case '4':
+//             return 28.10
+//             break;
+//         default:
+//             return 'categoria nao encontrada!';
+//     }
+// }
+
+// var categoria_veiculo = "3";
+// console.log(valor_pedagio(categoria_veiculo));
+
+// var categoria_veiculo = "5";
+// console.log(valor_pedagio(categoria_veiculo));
+
+// aula 29 - Break e continue
+
+// var x = 0;
+
+// while(x < 10){
+//     console.log(x);
+//     x++;
+
+//     if(x==5){
+//         break;
+//     }
+// }
+
+// var lista = [1,5,9,33,56,89,100,122,145,189,190,199,205,290];
+
+// for( a = 0; a < lista.length ; a++){
+    
+//     if(lista[a] == 190){
+//         console.log('Valor encontrado');
+//         break;
+//     }
+//     console.log(lista[a]);
+// }
+
+var num=0;
+
+while (num < 20){
+
+    if(num == 3){
+        num++;
+        continue;
     }
 
-    document.getElementById("relogio").innerHTML = format_time(horas) + ":" + format_time(minutos) + ":" + format_time(segundos);
-});
+    console.log(num);
+    num++;
+}
