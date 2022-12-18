@@ -191,15 +191,96 @@
 //     console.log(lista[a]);
 // }
 
-var num=0;
+// var num=0;
 
-while (num < 20){
+// while (num < 20){
 
-    if(num == 3){
-        num++;
-        continue;
-    }
+//     if(num == 3){
+//         num++;
+//         continue;
+//     }
 
-    console.log(num);
-    num++;
+//     console.log(num);
+//     num++;
+// }
+
+//aula 30 - formularios
+//document.getElementById("mostrar_opcao").onclick = function () {
+
+    // var campo_select = document.getElementById("options");
+    // var indice_selecionado = campo_select.options.selectedIndex;
+    // var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
+    // document.getElementById("opcao_selecionada").innerHTML = valor_selecionado;
+
+//     var valor_selecionado = document.getElementById("options").value;
+//     document.getElementById("opcao_selecionada").innerHTML = valor_selecionado;
+
+// };
+
+// // radio buttons
+// document.getElementById("mostrar_radio").onclick = function () {
+
+//     var radio = document.getElementsByName("genero");
+    
+//     var radio_selected;
+    
+//     for (var a = 0;  a < radio.length; a++) {
+//         if (radio[a].checked) {
+//             radio_selected = radio[a].value;
+//             break;
+//         }
+//     }
+    
+//     document.getElementById("radio_selecionado").innerHTML = radio_selected;
+
+// };
+// check boxes
+
+// document.getElementById("mostrar_check").onclick = function(){
+
+
+//     var check = document.getElementsByName("interesse");
+
+//     document.getElementById("check_selecionado").innerHTML = "";
+
+//     for(var b=0; b < check.length; b++) {
+//         if(check[b].checked){
+//             document.getElementById("check_selecionado").innerHTML += '<li>'+ check[b].value +'</li>';
+//         }
+//     }
+
+// };
+
+// document.getElementById("mostrar_data").onclick = function () {
+
+//     var data_select = document.getElementById("data_evento").value;
+//     var data_completa = new Date(data_select);
+//     document.getElementById("data_selecionada").innerHTML = data_completa;
+
+// };
+
+document.getElementById("escolaridade").onchange = function () {
+
+    var campo_select = document.getElementById("escolaridade");
+    var indice_selecionado = campo_select.options.selectedIndex;
+    var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
+    document.getElementById("escolaridade_selecionada").innerHTML = valor_selecionado;
+
+};
+
+var check = document.getElementsByName("lanche");
+
+for (var a = 0;  a < check.length; a++) {
+
+    check[a].onchange = function () {
+
+        document.getElementById("check_selecionado").innerHTML = "";
+        
+        for (var b = 0;  b < check.length; b++) {
+            
+            if (check[b].checked) {
+                document.getElementById("check_selecionado").innerHTML += '<li>' + check[b].value + '</li>';
+            }
+        }
+    }  
 }
