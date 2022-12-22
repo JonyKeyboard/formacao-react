@@ -85,6 +85,7 @@ var parametros_pesquisa = {
 $(function(){
 
     function atualizar_orcamento(parametros) {
+        
         $('.refresh-loader').show();
 
         var quantidade = parametros.quantidade;
@@ -107,14 +108,44 @@ $(function(){
             valor_total *= 0.95;
         }
 
-        console.log(valor_total);
+        console.log('parametros: ' + parametros);
+        console.log('valor total: ' + valor_total);
+        $('.refresh-loader').hide();
 
     }
 
-    // ao carregar a página verificar local storage e atualizar a variável parametros_oesquisa
+    $(".option-filter div").click(function(){
+        
+        $(this).parent().children("div").removeClass("selected");
+        $(this).addClass("selected");
+
+        var categoria = $(this).parent().attr('id');
+        parametros_pesquisa[categoria] = $(this).attr('id');
+        atualizar_orcamento(parametros_pesquisa);
+
+    });
+
+    $("select").change(function(){
+
+        var parametros_select = $(this).attr('id');
+        parametros_pesquisa[parametros_select] = $(this).val();
+        atualizar_orcamento(parametros_pesquisa);
+
+    });
+
+    $('#quantidade').change(function(){
+
+        var parametros_input = $(this).attr('id');
+        parametros_pesquisa[parametros_input] = $(this).val();
+        atualizar_orcamento(parametros_pesquisa);
+
+    });
+
+    // ao carregar a página verificar local storage e atualizar a variável parametros_pesquisa
 
     atualizar_orcamento(parametros_pesquisa);
 
+   
 
     
 });
