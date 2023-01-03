@@ -220,37 +220,123 @@
 
 // Aula 44 - erros
 
-function pegar_usuario(){
+// function pegar_usuario(){
 
-    window.setTimeout(function(){
-        var u = {
-            'nome': 'João'
-        };
-        return u;
-    }, 1000);
+//     window.setTimeout(function(){
+//         var u = {
+//             'nome': 'João'
+//         };
+//         return u;
+//     }, 1000);
     
-}
+// }
         
-function saudar_usuario(user) {
-    console.log('Olá ' + user.nome + ', como vai?');
-}
+// function saudar_usuario(user) {
+//     console.log('Olá ' + user.nome + ', como vai?');
+// }
         
-var user = {
-    'nome': ""
-}
+// var user = {
+//     'nome': ""
+// }
 
-try {
+// try {
     
-    if (!user.nome) {
-        throw 'Nome em branco';
-    } 
+//     if (!user.nome) {
+//         throw 'Nome em branco';
+//     } 
     
-    saudar_usuario(user);
+//     saudar_usuario(user);
     
-} catch (err) {
-    console.log(err);
-    console.log('Olá usuário, como vai?');
-}
+// } catch (err) {
+//     console.log(err);
+//     console.log('Olá usuário, como vai?');
+// }
 
+// Aula 45 - Operador If Ternário
+
+ // Exemplo com if normal:
+//  var nome = "";
+//  if (nome) {
+//      var mensagem = "Olá " + nome;
+//  } else {
+//      var mensagem = "Nome não informado";
+//  }
+
+// nome = "Jony";
+// idade = 29;
+
+// mensagem = (nome && idade) ? "Olá " + nome + ", você tem "+ idade +" anos." 
+//     : (!nome && !idade) ? "Nome e idade não informados"
+//     : (!idade) ? "Idade não informada"
+//     : "Nome não informado";
+
+// console.log(mensagem);
+
+// Aula 46 - Escopo
+
+// function criar_nome() {
+//     nome = 'Maria';
+//     console.log(nome); 
+// }
+// criar_nome(); // O console mostrará 'Maria'
+// console.log(nome); // O console mostrará 'Maria'
+
+// -----  Escopo Local em blocos
+// var x = 0;
+
+// if (x == 0) {
+//     let nome = "Mariana";
+// }
+
+// console.log(nome); // Este comando gerará um erro,
+// // pois a variável nome foi criada no escopo local do bloco.
+//------------------
+// var a = "teste";
+
+// for (let a = 0; a < 5 ; a++) {
+//     console.log(a);
+// }
+
+// console.log(a); // O console mostrará "teste"
+//-------------------
+// const PI = 3.14159;
+// PI = 0; // Este comando gerará um erro, pois não se pode alterar o valor de uma constante
+
+// Aula 47 - Namespaces
+
+// var meuWebApp = (function() {
+
+//     var nome= "Felipe";
+    
+//     return {
+//         ver_nome: function() {
+//             return nome;    
+//         },
+//         mudar_nome(novo_nome) {
+//             nome = novo_nome;
+//         },
+//         apagar_nome: function() {
+//             nome = null;
+//         }
+//     };  
+// })();   
+
+// console.log( meuWebApp.ver_nome() );
+// console.log( meuWebApp.mudar_nome('Marcos') );
+// console.log( meuWebApp.apagar_nome() );
+
+// Aula 47 - JSON
+
+var funcionario = {
+    'nome': "Fernanda Costa",
+    'd_nascimento': '1988-10-01',
+    'CPF': '111.111.111-11'
+};
+
+var funcionario_json = JSON.stringify(funcionario);
+console.log(funcionario_json);
+
+// O console mostrará: {"nome":"Fernanda Costa","d_nascimento":"1988-10-01","CPF":"111.111.111-11"}
+// que é exatamente o nosso objeto em formato string.
 
 // });
