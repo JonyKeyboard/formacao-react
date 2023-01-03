@@ -1,4 +1,4 @@
-$(function(){
+// $(function(){
 
     // aula 34 = Jquery - Sintaxe
 
@@ -188,16 +188,69 @@ $(function(){
 
     //aula 40 - Jquery - metódos em cadeia
 
-    $("#animar").click(function(){
+//     $("#animar").click(function(){
 
-        $("#quadrado")
-            .animate({width: '+=20px'},500)
-            .animate({height: '+=20px'},500, 
-                function() {
-                    $("#quadrado").css('background-color', 'green')
-                }
-            )
-            .animate({borderRadius: '20px'});
-    });
+//         $("#quadrado")
+//             .animate({width: '+=20px'},500)
+//             .animate({height: '+=20px'},500, 
+//                 function() {
+//                     $("#quadrado").css('background-color', 'green')
+//                 }
+//             )
+//             .animate({borderRadius: '20px'});
+//     });
 
-});
+
+// Aula 43 - Funções Callback
+
+// function pegar_usuario(callback){
+
+//     window.setTimeout(function(){
+//         var u = {
+//             'nome': 'João'
+//         };
+//         callback(u);
+//     }, 1000);
+
+// }
+        
+// pegar_usuario(function(user) {
+//     console.log('Olá ' + user.nome + ', como vai?');
+// });
+
+// Aula 44 - erros
+
+function pegar_usuario(){
+
+    window.setTimeout(function(){
+        var u = {
+            'nome': 'João'
+        };
+        return u;
+    }, 1000);
+    
+}
+        
+function saudar_usuario(user) {
+    console.log('Olá ' + user.nome + ', como vai?');
+}
+        
+var user = {
+    'nome': ""
+}
+
+try {
+    
+    if (!user.nome) {
+        throw 'Nome em branco';
+    } 
+    
+    saudar_usuario(user);
+    
+} catch (err) {
+    console.log(err);
+    console.log('Olá usuário, como vai?');
+}
+
+
+// });
