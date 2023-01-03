@@ -325,18 +325,31 @@
 // console.log( meuWebApp.mudar_nome('Marcos') );
 // console.log( meuWebApp.apagar_nome() );
 
-// Aula 47 - JSON
+// Aula 48 - JSON
 
-var funcionario = {
-    'nome': "Fernanda Costa",
-    'd_nascimento': '1988-10-01',
-    'CPF': '111.111.111-11'
-};
+// var funcionario = {
+//     'nome': "Fernanda Costa",
+//     'd_nascimento': '1988-10-01',
+//     'CPF': '111.111.111-11'
+// };
 
-var funcionario_json = JSON.stringify(funcionario);
-console.log(funcionario_json);
+// var funcionario_json = JSON.stringify(funcionario);
+// console.log(funcionario_json);
 
 // O console mostrará: {"nome":"Fernanda Costa","d_nascimento":"1988-10-01","CPF":"111.111.111-11"}
 // que é exatamente o nosso objeto em formato string.
+
+// Aula 50 - Ajaz - Request
+
+var xhttp = new XMLHttpRequest();
+
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
+    }
+};
+
+xhttp.open("GET", "https://openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22");
+xhttp.send();
 
 // });
